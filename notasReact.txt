@@ -3,17 +3,17 @@
 Inicialización de un proyecto en React
 Creación de nuestro sitio web usando la plantilla por defecto de create-react-app:
 
-npx create-react-app nombre-de-tu-proyecto
+-  npx create-react-app (nombre-de-tu-proyecto)
 
 tuve un pequeño problema con npx,
 primero escribi npm install -g npx y despues el npx creat-react-app pero no funcionaba. luego intente esto y me funciono…
 
-npx create-react-app hola-mundo --use-npm
+-   npx create-react-app hola-mundo --use-npm
 saludos…!!
 
 Iniciar el servidor de desarrollo:
 
-npm start
+-  npm start
 
 
 No olvides que puedes aprender a manejar de forma las diferentes herramientas de desarrollo en el Curso de Prework: Buenas Prácticas y Entorno de Desarrollo.
@@ -23,38 +23,38 @@ Los nombres de nuestros componentes deben empezar con una letra mayúscula, al i
 
 Los componentes Stateful son los más robustos de React. Los usamos creando clases que extiendan de React.Component. Nos permiten manejar estado y ciclo de vida (más adelante los estudiaremos a profundidad).
 
-import React, { Component } from 'react';
+-  import React, { Component } from 'react';
 
-class Stateful extends Component {
-  constructor(props) {
-    super(props);
+-  class Stateful extends Component {
+-    constructor(props) {
+-      super(props);
+-  
+-      this.state = { hello: 'hello world' };
+-    }
+-  
+-    render() {
+-      return (
+-        <h1>{this.state.hello}h1>
+-      );
+-    }
+-  }
 
-    this.state = { hello: 'hello world' };
-  }
-
-  render() {
-    return (
-      <h1>{this.state.hello}h1>
-    );
-  }
-}
-
-export default Stateful;
+-  export default Stateful;
 
 También tenemos componentes Stateless o Presentacionales. Los usamos creando funciones que devuelvan código en formato JSX (del cual hablaremos en la próxima clase).
 
-import React from 'react';
+-  import React from 'react';
 
-const Stateless = () => {
-  return (
-    <h1>¡Hola!h1>
-  );
-}
+-  const Stateless = () => {
+-    return (
+-      <h1>¡Hola!h1>
+-    );
+-  }
 
 // Otra forma de crearlos:
-const Stateless = () => <h1>¡Hola!h1>;
+-  const Stateless = () => <h1>¡Hola!h1>;
 
-export default Stateless;
+-  export default Stateless;
 
 
 //////////////////////////////////////////////// Iniciando con React ////////////////////////////////////////////////
@@ -64,24 +64,24 @@ Estamos acostumbrados a escribir código HTML en archivos .html y la lógica de 
 
 React usa JSX: una sintaxis que nos permite escribir la estructura HTML y la lógica en JavaScript desde un mismo lugar: nuestros componentes.
 
-import React from 'react';
+-  import React from 'react';
 
-const HolaMundo = () => {
-  // Esto es JavaScript:
-  const claseCSSHolaMundo = 'container-red';
-  const mensajeTextoHTML = '¡Hola, Mundo!';
+-  const HolaMundo = () => {
+-    // Esto es JavaScript:
+-    const claseCSSHolaMundo = 'container-red';
+-    const mensajeTextoHTML = '¡Hola, Mundo!';
 
-  // Esto es JSX (HTML + JavaScript):
-  return (
-    <div className={claseCSSHolaMundo}>
-      <h1>{mensajeTextoHTML}h1>
+-    // Esto es JSX (HTML + JavaScript):
+-    return (
+-      <div className={claseCSSHolaMundo}>
+-        <h1>{mensajeTextoHTML}h1>
 
-      {isTrue ? '¡Es verdad! :D' : '¡No es verdad! :('}
-    div>
-  );
-}
+-        {isTrue ? '¡Es verdad! :D' : '¡No es verdad! :('}
+-      div>
+-    );
+-  }
 
-export default HolaMundo;
+-  export default HolaMundo;
 
 //////////////////////////////////////////////// JSX: JavaScript + HTML ////////////////////////////////////////////////
 
@@ -89,28 +89,28 @@ export default HolaMundo;
 
 Las Props son la forma de enviar y recibir información en nuestros componentes. Son la forma de comunicar cada componente con el resto de la aplicación. Son muy parecidas a los parámetros y argumentos de las funciones en cualquier lenguaje de programación.
 
-// Button.jsx
-import React from 'react';
-
-const Button = props => {
-  return (
-    <div>
-      <button type="button">{props.text}button>
-    div>
-  );
-};
-
-export default Button;
+-  // Button.jsx
+-  import React from 'react';
+-  
+-  const Button = props => {
+-    return (
+-      <div>
+-        <button type="button">{props.text}button>
+-      div>
+-    );
+-  };
+-  
+-  export default Button;
 
 
 // index.jsx
-import React from 'react';
-import Button from './components/Button';
+-  import React from 'react';
+-  import Button from './components/Button';
 
-ReactDOM.render(
-  <Button text="¡Hola!" />,
-  document.getElementByid('root'),
-);
+-  ReactDOM.render(
+-    <Button text="¡Hola!" />,
+-    document.getElementByid('root'),
+-  );
 
 //////////////////////////////////////////////// Props: Comunicación entre Componentes ////////////////////////////////////////////////
 
@@ -120,24 +120,24 @@ ReactDOM.render(
 
 Estas propiedades reciben el nombre de la función que ejecuta el código que responde a las interacciones de los usuarios. Seguramente, esta función usará la función this.setState para actualizar el estado de nuestro componente.
 
-class Button extends React.Component {
-  state = { count: 0 }
+-  class Button extends React.Component {
+-    state = { count: 0 }
 
-  handleClick = () => (
-     this.setState({ count: this.state.count + 1 })
-  );
+-    handleClick = () => (
+-       this.setState({ count: this.state.count + 1 })
+-    );
 
-  render() {
-    const { count } = this.state;
-
-    return (
-      <div>
-        <h1>Manzanas: {count}</h1>
-        <button onClick{this.handleClick}>Sumar</button>
-      </div>
-    );
-  }
-}
+-    render() {
+-      const { count } = this.state;
+-  
+-      return (
+-        <div>
+-          <h1>Manzanas: {count}</h1>
+-          <button onClick{this.handleClick}>Sumar</button>
+-        </div>
+-      );
+-    }
+-  }
 
 
 Recuerda que los nombres de estos eventos deben seguir la nomenclatura camelCase: primera palabra en minúsculas, iniciales de las siguientes palabras en mayúsculas y el resto también en minúsculas."
@@ -238,4 +238,24 @@ Script para ejecutar las tareas de Webpack (package.json):
 -  }
 
 //////////////////////////////////////////////// Webpack: Empaquetando nuestros módulos ////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////// Webpack Dev Server: Reporte de errores y Cambios en tiempo real ////////////////////////////////////////////////
+
+Instalación de Webpack Dev Server:
+
+-  npm install --save-dev webpack-dev-server
+
+Script para ejecutar el servidor de Webpack y visualizar los cambios en tiempo real (package.json):
+
+-  {
+-    ""scripts"": {
+-      ""build"": ""webpack --mode production"",
+-      ""start"": ""webpack-dev-server --open --mode development""
+-    },
+-  }
+
+
+
+//////////////////////////////////////////////// Webpack Dev Server: Reporte de errores y Cambios en tiempo real ////////////////////////////////////////////////
 
