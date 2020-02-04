@@ -150,16 +150,36 @@ Recuerda que los nombres de estos eventos deben seguir la nomenclatura camelCase
 
 Iniciar un repositorio en GIT:
 
-  git init
+-    git init
 
 Iniciar un proyecto de Node.js:
 
-  npm init -y
+-    npm init -y
   ```
 
   Instalar React:
 
   ```bash
-npm install react react-dom
+-  npm install react react-dom
 
 //////////////////////////////////////////////// Instalación y configuración de entorno ////////////////////////////////////////////////
+
+//////////////////////////////////////////////// Agregando compatibilidad con todos los navegadores usando Babel ////////////////////////////////////////////////
+
+Babel es una herramienta muy popular para escribir JavaScript moderno y transformarlo en código que pueda entender cualquier navegador.
+
+Instalación de Babel y otras herramientas para que funcione con React:
+
+  npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
+
+Configuración de Babel (.babelrc):
+
+-  {
+-    ""presets"": [
+-      ""@babel/preset-env"",
+-      ""@babel/preset-react""
+-    ],
+-  }
+
+//////////////////////////////////////////////// Agregando compatibilidad con todos los navegadores usando Babel ////////////////////////////////////////////////
+
