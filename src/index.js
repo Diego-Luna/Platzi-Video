@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/no-unresolved
 import React from 'react';
+// eslint-disable-next-line import/no-unresolved
 import ReactDOM from 'react-dom';
-import Helloworld from './components/HelloWorls'
+// eslint-disable-next-line import/no-unresolved
+import App from './containers/App';
 
-ReactDOM.render(<Helloworld/>,document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
