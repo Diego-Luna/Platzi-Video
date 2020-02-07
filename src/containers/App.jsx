@@ -16,7 +16,6 @@ import CarouselItem from '../components/CarouselItem';
 // eslint-disable-next-line import/no-unresolved
 import '../assets/styles/App.scss';
 
-
 const App = () => (
   <div className='App'>
     <Header />
@@ -29,6 +28,7 @@ const App = () => (
         <CarouselItem />
         <CarouselItem />
       </Carousel>
+
     </Categories>
 
   </div>
