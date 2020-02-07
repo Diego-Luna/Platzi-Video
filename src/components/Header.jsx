@@ -2,13 +2,15 @@
 // eslint-disable-next-line import/no-unresolved
 import React from 'react';
 import '../assets/styles/components/Header.scss';
+import userIcon from '../assets/static/icons8-usuario-masculino-26.png';
+import icon from '../assets/static/PlatziVideo.png';
 
 const Header = () => (
   <header className='header'>
-    <img className='header__img' src='https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png' alt='Platzi Video' />
+    <img className='header__img' src={icon} alt='Platzi Video' />
     <div className='header__menu'>
       <div className='header__menu--profile'>
-        <img src='./icons8-usuario-masculino-26.png' alt='User' />
+        <img src={userIcon} alt='User' />
         <p>Perfil</p>
       </div>
       <ul>
