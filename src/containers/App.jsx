@@ -9,9 +9,11 @@ import Search from '../components/Search';
 // eslint-disable-next-line import/no-unresolved
 import Categories from '../components/Categories';
 // eslint-disable-next-line import/no-unresolved
-import CategoriesItem from '../components/CarouselItem';
 import Carousel from '../components/Carousel';
+// eslint-disable-next-line import/no-unresolved
 import CarouselItem from '../components/CarouselItem';
+// eslint-disable-next-line import/no-unresolved
+import Footer from '../components/Footer';
 
 // eslint-disable-next-line import/no-unresolved
 import '../assets/styles/App.scss';
@@ -30,7 +32,7 @@ const App = () => (
       </Carousel>
 
     </Categories>
-
+    <Footer />
   </div>
 );
 
