@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line import/no-unresolved
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 // eslint-disable-next-line import/no-unresolved
 import Header from '../components/Header';
@@ -18,43 +18,55 @@ import Footer from '../components/Footer';
 // eslint-disable-next-line import/no-unresolved
 import '../assets/styles/App.scss';
 
-const App = () => (
-  <div className='App'>
-    <Header />
-    <Search />
+const App = () => {
+  const [videos, setVideos] = useState([]);
 
-    <Categories title='Mi lista'>
-      <Carousel>
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+  useEffect(() => {
+    fetch('http://localhost:3000/initalState')
+      .then(response => response.json())
+      .then(data => setVideos(data));
+  }, []);
 
-    <Categories title='tendencias'>
-      <Carousel>
-        <CarouselItem />
-        <CarouselItem />
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+  console.log(videos);
 
-    <Categories title='Originales de Platzi video'>
-      <Carousel>
-        <CarouselItem />
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+  return (
+    <div className='App'>
+      <Header />
+      <Search />
 
-    <Categories title='Los faboritos de tus amigos'>
-      <Carousel>
-        <CarouselItem />
-      </Carousel>
-    </Categories>
+      <Categories title='Mi lista'>
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
 
-    <Footer />
-  </div>
-);
+      <Categories title='tendencias'>
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Categories title='Originales de Platzi video'>
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Categories title='Los faboritos de tus amigos'>
+        <Carousel>
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

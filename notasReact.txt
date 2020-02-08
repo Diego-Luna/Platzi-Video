@@ -399,3 +399,11 @@ Instalación de JSON Server:
 
 //////////////////////////////////////////////// Creando una Fake API ////////////////////////////////////////////////
 
+//////////////////////////////////////////////// React Hooks: useEffect y useState ////////////////////////////////////////////////
+
+En esta clase el profesor Oscar Barajas nos enseña qué es y cómo implementar React Hooks: una característica de React disponible a partir de la versión 16.8 que nos permite agregar estado y ciclo de vida a nuestros componentes creados como funciones.
+
+React es una librería desarrollada por Facebook que nos ayuda a construir interfaces de usuario interactivas para todo tipo de aplicaciones: páginas web, aplicaciones móviles o de escritorio, experiencias de realidad virtual, entre otras.
+
+//////////////////////////////////////////////// React Hooks: useEffect y useState ////////////////////////////////////////////////
+
