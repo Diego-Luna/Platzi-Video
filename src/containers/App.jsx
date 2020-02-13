@@ -15,47 +15,44 @@ import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 // eslint-disable-next-line import/no-unresolved
 import Footer from '../components/Footer';
+// eslint-disable-next-line import/no-unresolved
+import useInitialState from '../hooks/useInitialState';
 
 // eslint-disable-next-line import/no-unresolved
 import '../assets/styles/App.scss';
 
-const App = () => {
-  // const [videos, setVideos] = useState([]);
-  const [videos, setVideos] = useState({ mylist: [], trends: [], originals: [] });
-  useEffect(() => {
-    fetch('http://localhost:3000/initalState')
-      .then((response) => response.json())
-      .then((data) => setVideos(data));
-  }, []);
+const API = 'http://localhost:3000/initalState';
 
-  return (
+const App = () => {
+
+  const initialState = useInitialState(API);
+
+  return initialState.length === 0 ? <h1>cargando...</h1> : (
     <div className='App'>
       <Header />
       <Search />
 
-      {videos.mylist.length > 0 && (
-        <Categories title='Mi lista'>
-          <Carousel>
-            <CarouselItem />
-          </Carousel>
-        </Categories>
-      )}
+      <Categories title='Mi lista'>
+        <Carousel>
+          {initialState.mylist.map((item) => <CarouselItem key={item.id} {...item} />) }
+        </Carousel>
+      </Categories>
 
       <Categories title='tendencias'>
         <Carousel>
-          {videos.trends.map((item) => <CarouselItem key={item.id} {...item} />) }
+          {initialState.trends.map((item) => <CarouselItem key={item.id} {...item} />) }
         </Carousel>
       </Categories>
 
       <Categories title='Originales de Platzi video'>
         <Carousel>
-          <CarouselItem />
+          {initialState.originals.map((item) => <CarouselItem key={item.id} {...item} />) }
         </Carousel>
       </Categories>
 
       <Categories title='Los faboritos de tus amigos'>
         <Carousel>
-          <CarouselItem />
+          {initialState.trends.map((item) => <CarouselItem key={item.id} {...item} />) }
         </Carousel>
       </Categories>
 
