@@ -467,3 +467,19 @@ Las rutas que añadamos debemos definirlas con el componente Route y estas deben
 * component para indicarle el componente que va a renderizar.
 
 //////////////////////////////////////////////// Crear nuestro archivo de Rutas ////////////////////////////////////////////////
+
+//////////////////////////////////////////////// Container: Login ////////////////////////////////////////////////
+
+Vamos a descargar el proyecto del curso de Frontend de escuela de JavaScript para crear los componentes que necesitaremos, en caso de que vengas del curso de React no debes descargar nada.
+
+Debemos modificar nuestra configuración del entorno de desarrollo local para que pueda funcionar con el uso de rutas, debemos ir al archivo webpack.config.js y añadir este fragmento de código antes de plugins:
+
+-  module.exports = {
+-    {/*...*/}
+-    devServer: {  
+-      historyApiFallback: true,  
+-    },
+-    {/*...*/}
+-  }
+
+//////////////////////////////////////////////// Container: Login ////////////////////////////////////////////////
