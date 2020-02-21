@@ -493,6 +493,4 @@ El estado es de solo lectura.
 Solamente podemos utilizar funciones puras.
 Nuestra UI va a activar una action, esta action va a ejecutar un reducer para modificar la información del store, y al actualizarse el store la UI se va a modificar.
 
-
-
 //////////////////////////////////////////////// Qué es Redux ////////////////////////////////////////////////
