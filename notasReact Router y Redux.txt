@@ -494,3 +494,16 @@ Solamente podemos utilizar funciones puras.
 Nuestra UI va a activar una action, esta action va a ejecutar un reducer para modificar la información del store, y al actualizarse el store la UI se va a modificar.
 
 //////////////////////////////////////////////// Qué es Redux ////////////////////////////////////////////////
+
+//////////////////////////////////////////////// Instalación de Redux ////////////////////////////////////////////////
+
+Vamos a instalar las dependencias para poder trabajar con Redux:
+
+-  npm install redux react-redux --save
+
+Dentro de nuestro proyecto vamos a crear una carpeta para nuestros actions y otra para los reducers que utilizaremos en Redux.
+
+El paquete react-redux nos proporciona un Provider para poder encapsular nuestros componentes por medio de un connect para poder transmitir la información que necesitemos del store a cada componente.
+
+//////////////////////////////////////////////// Instalación de Redux ////////////////////////////////////////////////
+
