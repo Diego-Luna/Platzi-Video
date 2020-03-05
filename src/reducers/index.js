@@ -1,8 +1,11 @@
+/* eslint-disable no-case-declarations */
 const reducer = (state, action) => {
 
   switch (action.type) {
     case 'SET_FAVORITE':
-      return {
+      const exists = state.myList.find((items) => items.id === action.payload.id);
+
+      return exists ? state : {
         ...state,
         myList: [...state.myList, action.payload],
       };
