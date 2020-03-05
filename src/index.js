@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 // eslint-disable-next-line no-unused-vars
 import { createStore } from 'redux';
-import reducer from './reducers';
+import reducer from './reducers/index';
 // eslint-disable-next-line import/no-unresolved
 import App from './routes/App';
 
