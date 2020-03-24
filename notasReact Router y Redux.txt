@@ -529,3 +529,20 @@ Dentro de los reducers usaremos un switch para separar la lógica por cada tipo 
 
 //////////////////////////////////////////////// Creando los reducers ////////////////////////////////////////////////
 
+//////////////////////////////////////////////// agregamos la imagen de usuario ////////////////////////////////////////////////
+
+- npm i md5 --save
+
+md5 es un algoritmo criptografico que le da al coreo un hast y lo vincula con un avatar, para asi no guardar el coreo olectronico.
+
+
+//////////////////////////////////////////////// agregamos la imagen de usuario ////////////////////////////////////////////////
+
+//////////////////////////////////////////////// Creando un Servicio para Gravatar ////////////////////////////////////////////////
+
+Muchas veces la mejor opción no es descargar un paquete de npm ya que podemos ver la documentación, entender cómo funciona y nosotros implementar el código necesario para nuestro caso, ya que instalar todo el paquete puede volver más pesado nuestro proyecto.
+
+Para nuestro servicio que llamará a Gravatar vamos a crear la carpeta utils y dentro añadir el archivo gravatar.js.
+
+//////////////////////////////////////////////// Creando un Servicio para Gravatar ////////////////////////////////////////////////
+
