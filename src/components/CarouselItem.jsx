@@ -4,9 +4,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { setFavorite, deleteFavorite } from '../actions/index.js';
 import '../assets/styles/components/CarouselItem.scss';
 import removeIcon from '../assets/static/remove-icon.png';
+import playIcon from '../assets/static/playIcon.png';
 
 const CarouselItem = (props) => {
   // es lo mismo que ponerlo en {}
@@ -24,8 +26,13 @@ const CarouselItem = (props) => {
       <img className='carousel-item__img' src={cover} alt={title} />
       <div className='carousel-item__details'>
         <div>
-          <img className='img__item' src='https://img.icons8.com/flat_round/64/000000/play--v5.png' />
-
+          <Link to={`/player/${id}`} >
+            <img 
+              className='img__item' 
+              src={playIcon} 
+              alt='playIcon'
+            />
+          </Link>
           {isList ? (
             <img
               className='img__item'
