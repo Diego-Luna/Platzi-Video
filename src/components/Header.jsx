@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar.js';
 import { logoutRequest } from '../actions/index';
+import PropTypes from 'prop-types';
 import '../assets/styles/components/Header.scss';
 import userIcon from '../assets/static/icons8-usuario-masculino-26.png';
 import icon from '../assets/static/PlatziVideo.png';
@@ -54,6 +55,11 @@ const Header = ( props ) => {
       </header>
 );
 };
+
+Header.propTypes = {
+  user: PropTypes.object,
+  logoutRequest: PropTypes.any.isRequired
+}
 
 const mapStateToProps = (state) => {
   return {
